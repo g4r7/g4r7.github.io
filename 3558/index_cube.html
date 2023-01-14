@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GridReactor Cube</title>
+    <style media="screen">
+      body {
+        background-color: #333333;
+      }
+      div.output > div {
+        background: linear-gradient(to right, rgba(242, 242, 242, 0) 0%, rgba(242, 242, 242, 0.7) 70%, #f2f2f2 100%);
+        border: 5px solid grey;
+      }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <div id="app">
+    </div>
+    <script src="Stats.js"></script>
+    <script type="text/javascript">
+      var stats = new Stats();
+      stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+      document.body.appendChild( stats.dom );
+      function animate() {
+        stats.begin();
+        stats.end();
+        requestAnimationFrame( animate );
+      }
+      requestAnimationFrame( animate );
+    </script>
+    <script src="shadow3-js/cube.js"></script>
+  </body>
+</html>
